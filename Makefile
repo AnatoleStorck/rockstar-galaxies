@@ -1,10 +1,11 @@
-CFLAGS=-m64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE -D_POSIX_SOURCE -D_POSIX_C_SOURCE=200809L -D_SVID_SOURCE -D_DARWIN_C_SOURCE -Wall -fno-math-errno -fPIC
+CFLAGS=-m64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_DEFAULT_SOURCE -D_POSIX_SOURCE -D_POSIX_C_SOURCE=200809L -D_DARWIN_C_SOURCE -Wall -fno-math-errno -fPIC -I/usr/include/tirpc
 LDFLAGS=-shared
-OFLAGS = -lm -O3 -std=c99
+OFLAGS = -lm -ltirpc -O3 -std=c99
 DEBUGFLAGS = -lm -g -O3 -std=c99 #-Dinline= 
 PROFFLAGS = -lm -g -pg -O2 -std=c99
 CC = gcc
 CFILES = rockstar.c check_syscalls.c fof.c groupies.c subhalo_metric.c potential.c nfw.c jacobi.c fun_times.c interleaving.c universe_time.c hubble.c integrate.c distance.c config_vars.c config.c bounds.c inthash.c io/read_config.c client.c server.c merger.c inet/socket.c inet/rsocket.c inet/address.c io/meta_io.c io/io_internal.c io/io_ascii.c io/stringparse.c io/io_gadget.c io/io_generic.c io/io_art.c io/io_nchilada.c io/io_tipsy.c io/io_bgc2.c io/io_util.c io/io_arepo.c io/io_hdf5.c io/io_enzo.c
+OFILES = main.o rockstar.o check_syscalls.o fof.o groupies.o subhalo_metric.o potential.o nfw.o jacobi.o fun_times.o interleaving.o universe_time.o hubble.o integrate.o distance.o config_vars.o config.o bounds.o inthash.o client.o server.o merger.o io/read_config.o inet/socket.o inet/rsocket.o inet/address.o io/meta_io.o io/io_internal.o io/io_ascii.o io/stringparse.o io/io_gadget.o io/io_generic.o io/io_art.o io/io_nchilada.o io/io_tipsy.o io/io_bgc2.o io/io_util.o io/io_arepo.o io/io_hdf5.o io/io_enzo.o
 DIST_FLAGS =
 HDF5_FLAGS = -DH5_USE_16_API -lhdf5 -DENABLE_HDF5 -I${HDF5_LIB}/include -L${HDF5_LIB}/lib
 
