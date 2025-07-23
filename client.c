@@ -29,7 +29,7 @@
 #include "interleaving.h"
 #include "config.h"
 
-#define CLIENT_DEBUG 1
+#define CLIENT_DEBUG 0
 
 extern struct rsocket *rsockets;
 
