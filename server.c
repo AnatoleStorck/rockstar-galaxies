@@ -587,7 +587,7 @@ int server(void) {
       do_merger_tree(snap);
     if (server_error_state) { reset_error(); reload_parts = 1; continue; }
 
-    timed_output("[Success] Done with snapshot %"PRId64".\n", snap);
+    timed_output("[Success] Done with snapshot %"PRId64".\n\n", snap);
     if (strlen(RUN_PARALLEL_ON_SUCCESS)) {
       timed_output("Running external parallel analysis process for snapshot %"PRId64"...\n", snap);
       command_writers_and_confirm("rpos");
